@@ -10,10 +10,13 @@ typedef struct s_list
 }   t_list;
 
 int ft_atoi(char *str);
-int ft_check_duplicate(t_list **stack);
+int ft_check_duplicate(t_list *stack);
+int ft_valide_number(char *argv[]);
+void ft_fill_stack(t_list **stack,char *argv[]);
 
 t_list *ft_last_lst(t_list **stack);
-
+void ft_add_back(t_list **stack,t_list *node);
+t_list *ft_lst_new(int value);
 
 void ra(t_list **stack_A);
 void rb(t_list **stack_B);

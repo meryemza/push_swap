@@ -27,27 +27,4 @@ int	ft_atoi(const char *str)
 	return (n * s);
 }
 
-int ft_check_args(t_list **stack,char *str)
-{
-    int i ;
-
-    i = 0;
-
-    if(str[i] == '-' || str[i] == '+' )
-            i++;
-        if(str[i] == '\0')
-            return 0;
-    while(str[i])
-    {
-        if(str[i] >= '0' && str[i] <= '9')
-            i++;
-        else
-            return 0;
-    }
-
-}
-int ft_check_duplicate(t_list **stack)
-{
-
-}
 

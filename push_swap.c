@@ -9,7 +9,8 @@ int main(int argc, char *argv[])
         return 0;
     stack_A = NULL;
     stack_B = NULL;
-    if(ft_check_args(&stack_A,argv) || ft_check_duplicate(&stack_A))
+
+    if(ft_check_args(&stack_A,argv) == 0 || ft_check_duplicate(stack_A) == 0)
     {
         write(2,"ERROR\n",6);
         return 0;
