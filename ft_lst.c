@@ -11,3 +11,4 @@ t_list *ft_last_lst(t_list **stack)
         head = head -> next;
     return head;
 }
+

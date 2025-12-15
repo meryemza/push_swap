@@ -9,6 +9,9 @@ typedef struct s_list
     struct s_list   *next;
 }   t_list;
 
+int ft_atoi(char *str);
+int ft_check_duplicate(t_list **stack);
+
 t_list *ft_last_lst(t_list **stack);
 
 
