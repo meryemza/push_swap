@@ -27,23 +27,22 @@ int	ft_atoi(const char *str)
 	return (n * s);
 }
 
-int ft_check_args(t_list **stack,char *argv[])
+int ft_check_args(t_list **stack,char *str)
 {
-    int i = 0;
-    int j = 0 ;
-    
-    while(argv[i])
+    int i ;
+
+    i = 0;
+
+    if(str[i] == '-' || str[i] == '+' )
+            i++;
+        if(str[i] == '\0')
+            return 0;
+    while(str[i])
     {
-       while(argv[i][j])
-       {
-        if(argv[i][j] == '-' ||argv[i][j] == '+' )
-            J++;
-        else if(argv[i][j] >= '0' && argv[i][j] <= '9')
-            J++;
+        if(str[i] >= '0' && str[i] <= '9')
+            i++;
         else
             return 0;
-       }
-       i++;
     }
 
 }
