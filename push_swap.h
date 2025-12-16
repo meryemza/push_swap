@@ -21,7 +21,11 @@ char	**ft_free(char **p, unsigned int word);
 unsigned int	ft_count_word(char const *s, char c);
 char	**ft_split(char const *s, char c);
 int ft_check_args(t_list **stack,char *argv[]);
+int ft_check_sorted(t_list *stack_A);
 
+
+int ft_size_lst(t_list *str);
+void ft_free_lst(t_list *lst);
 t_list *ft_last_lst(t_list **stack);
 void ft_add_back(t_list **stack,t_list *node);
 t_list *ft_lst_new(int value);

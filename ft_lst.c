@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:07:25 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/16 11:09:16 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/16 22:09:33 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,4 +49,30 @@ t_list *ft_lst_new(int value)
     node -> value = value;
     node -> next = NULL;
     return (node);
+}
+void ft_free_lst(t_list *lst)
+{
+    t_list *tmp;
+   tmp = lst;
+    while(tmp)
+    {
+        tmp = lst -> next;
+        free(lst);
+        lst = tmp;
+    }
+}
+
+int ft_size_lst(t_list *str)
+{
+    t_list *tmp;
+    tmp = str;
+    int size;
+    
+    size = 0;
+    while(tmp)
+    {
+       size++;
+       tmp = tmp -> next;  
+    }
+    return (size);
 }
