@@ -2,6 +2,10 @@
 #define PUSH_SWAP_H
 
 #include <stdlib.h>
+#include <stdio.h>
+#include <limits.h>
+#include <unistd.h>
+
 typedef struct s_list
 {
     int             value;
@@ -9,10 +13,14 @@ typedef struct s_list
     struct s_list   *next;
 }   t_list;
 
-int ft_atoi(char *str);
+long double  ft_atoi(const char *str);
 int ft_check_duplicate(t_list *stack);
-int ft_valide_number(char *argv[]);
+int ft_valide_number(char *arg);
 void ft_fill_stack(t_list **stack,char *argv[]);
+char	**ft_free(char **p, unsigned int word);
+unsigned int	ft_count_word(char const *s, char c);
+char	**ft_split(char const *s, char c);
+int ft_check_args(t_list **stack,char *argv[]);
 
 t_list *ft_last_lst(t_list **stack);
 void ft_add_back(t_list **stack,t_list *node);
