@@ -22,7 +22,10 @@ unsigned int	ft_count_word(char const *s, char c);
 char	**ft_split(char const *s, char c);
 int ft_check_args(t_list **stack,char *argv[]);
 int ft_check_sorted(t_list *stack_A);
-
+void ft_sort(t_list **stack_A,t_list **stack_B,int size);
+void sort_4(t_list **stack_A,t_list **stack_B);
+void sort_5(t_list **stack_A,t_list **stack_B);
+void sort_3(t_list **stack_A);
 
 int ft_size_lst(t_list *str);
 void ft_free_lst(t_list *lst);

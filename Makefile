@@ -1,12 +1,15 @@
-NAME = libftprintf.a
+NAME = push_swap
 
-SRC = ft_printf.c \
-      ft_putchar.c \
-      ft_putstr.c \
-      ft_putnbr.c \
-      ft_putnbr_uns.c \
-      ft_putnbr_hex.c \
-      ft_putptr.c
+SRC = ft_helper.c \
+      ft_lst.c \
+      push_swap.c \
+      push.c \
+      reverse_rotate.c \
+      rotate.c \
+      split.c \
+      swap.c \
+      valide_args.c \
+      sort.c\
 
 CC = cc
 
@@ -16,13 +19,10 @@ RM = rm -f
 
 OBJ = $(SRC:.c=.o)
 
-all : $(NAME)
+all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar rcs $(NAME) $(OBJ)
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(OBJ) -o $(NAME)
 
 clean : 
 	$(RM) $(OBJ) $(BONUS_OBJ)
