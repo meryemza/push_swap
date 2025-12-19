@@ -1,7 +1,8 @@
 NAME = push_swap
 
-SRC = ft_helper.c \
-      ft_lst.c \
+SRC = helper.c \
+      A_to_B.c\
+      B_to_A.c\
       push_swap.c \
       push.c \
       reverse_rotate.c \
@@ -10,6 +11,8 @@ SRC = ft_helper.c \
       swap.c \
       valide_args.c \
       sort.c\
+      helper_B_to_A.c\
+      big_sort.c\
 
 CC = cc
 

@@ -11,7 +11,15 @@ typedef struct s_list
     int             value;
     int             index;
     struct s_list   *next;
-}   t_list;
+} t_list;
+
+typedef struct s_range
+{
+    int mid;
+    int end;
+    int start;
+    int offset;
+} t_range;
 
 long double  ft_atoi(const char *str);
 int ft_check_duplicate(t_list *stack);
@@ -26,6 +34,13 @@ void ft_sort(t_list **stack_A,t_list **stack_B,int size);
 void sort_4(t_list **stack_A,t_list **stack_B);
 void sort_5(t_list **stack_A,t_list **stack_B);
 void sort_3(t_list **stack_A);
+void push_to_B(t_list **stack_A,t_list **stack_B,int *array,int size)
+void push_to_A(t_list **stack_A,t_list **stack_B,int *array,int size);
+void ft_add_index(t_list **stack_B);
+int ft_max_index(t_list *stack_B,int max);
+void ft_search_index(t_list **stack_B,int max);
+int	ft_search_max(t_list *stack_B, int max);
+
 
 int ft_size_lst(t_list *str);
 void ft_free_lst(t_list *lst);
