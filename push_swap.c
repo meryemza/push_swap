@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:07:35 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/18 13:13:58 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/20 18:43:43 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void ft_sort(t_list **stack_A,t_list **stack_B,int size)
     else if (size == 5)
         sort_5(stack_A,stack_B);
     else
-        big_sort(stack_A,stack_B,size);
+        big_sort(stack_A,stack_B);
 }
 
 int ft_check_sorted(t_list *stack_A)

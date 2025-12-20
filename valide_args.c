@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:06:53 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/16 15:03:20 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/20 21:49:05 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ void ft_fill_stack(t_list **stack,char *argv[])
         ft_add_back(stack,node);
         i++;
     }
+    ft_free2(argv);
+    return;
 }
 
 int ft_check_args(t_list **stack,char *argv[])
@@ -69,8 +71,7 @@ int ft_check_args(t_list **stack,char *argv[])
     int i ;
     char **str;
     int j;
-    int cont;
-    
+
     i = 1;
     while(argv[i])
     {
@@ -81,25 +82,15 @@ int ft_check_args(t_list **stack,char *argv[])
         free(str);
         return 0;
     }
-    cont = ft_count_word(argv[i],' ');
-
        while(str[j])
        {
-            if(ft_valide_number(str[j]) == 0)
-               {
-                ft_free(str,cont);
-                return 0;
-               }
-            if(ft_atoi(str[j]) < INT_MIN || ft_atoi(str[j]) > INT_MAX )
-                {
-                ft_free(str,cont);
-                return 0;
-                }
-               j++;
+            if(ft_valide_number(str[j]) == 0 || ft_atoi(str[j]) < INT_MIN || ft_atoi(str[j]) > INT_MAX )
+               return (ft_free2(str));
+            j++;
        }
             ft_fill_stack(stack,str);
-            ft_free(str,cont);
        i++;
     }
     return 1;
 }
+
