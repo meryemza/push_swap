@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/21 13:30:00 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 15:11:54 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/21 23:44:57 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,9 @@ int	ft_free2(char **str);
 int ft_strcmp(char *str1, char *str2);
 void ft_cheker(t_list **A,t_list **B);
 int instruction(t_list **A,t_list **B,char *line);
-
+int ft_freee(char **str,int count);
+ unsigned int	ft_count_word(char const *s, char c);
+ 
 int ft_size_lst(t_list *str);
 void ft_free_lst(t_list **lst);
 t_list *ft_last_lst(t_list **stack);

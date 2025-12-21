@@ -6,14 +6,14 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 21:55:41 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 13:38:38 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/21 23:44:43 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
 #include "push_swap_bonus.h"
 
-static unsigned int	ft_count_word(char const *s, char c)
+ unsigned int	ft_count_word(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	count;

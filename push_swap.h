@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 18:46:57 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 13:14:25 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/21 23:35:29 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ typedef struct s_list
     struct s_list   *next;
 } t_list;
 
+int ft_freee(char **str,int count);
+unsigned int	ft_count_word(char const *s, char c);
 long double  ft_atoi(const char *str);
 int ft_check_duplicate(t_list *stack);
 int ft_valide_number(char *arg);

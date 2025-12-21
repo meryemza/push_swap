@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:06:53 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/20 21:49:05 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/21 23:48:11 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void ft_fill_stack(t_list **stack,char *argv[])
         ft_add_back(stack,node);
         i++;
     }
-    ft_free2(argv);
     return;
 }
 
@@ -71,12 +70,14 @@ int ft_check_args(t_list **stack,char *argv[])
     int i ;
     char **str;
     int j;
-
-    i = 1;
-    while(argv[i])
+    int count;
+    
+    i = 0;
+    while(argv[++i])
     {
         j = 0;
        str = ft_split(argv[i],' ');
+       count = ft_count_word(argv[i],' ');
      if (str[j] == NULL)
     {
         free(str);
@@ -85,11 +86,11 @@ int ft_check_args(t_list **stack,char *argv[])
        while(str[j])
        {
             if(ft_valide_number(str[j]) == 0 || ft_atoi(str[j]) < INT_MIN || ft_atoi(str[j]) > INT_MAX )
-               return (ft_free2(str));
+               return (ft_freee(str,count));
             j++;
        }
             ft_fill_stack(stack,str);
-       i++;
+            ft_freee(str,count);
     }
     return 1;
 }

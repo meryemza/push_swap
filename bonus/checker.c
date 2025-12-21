@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 20:36:34 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 15:19:40 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/22 00:03:43 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void ft_cheker(t_list **A,t_list **B)
     char *line ;
     while((line = get_next_line(0)) != NULL)
     {
+     line[ft_strlen(line) - 1] = '\0';
     if(!instruction(A,B,line))
     {
             write(1,"ERROR\n",6);

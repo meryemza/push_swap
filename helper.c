@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:07:25 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 12:40:27 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/21 23:35:04 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,6 +112,16 @@ int	ft_free2(char **str)
 	{
 		free(str[i]);
 		i++;
+	}
+	free(str);
+	return (0);
+}
+int ft_freee(char **str,int count)
+{
+	while (count > 0)
+	{
+		count--;
+		free(str[count]);
 	}
 	free(str);
 	return (0);

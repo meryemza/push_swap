@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 19:42:11 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 15:12:57 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/21 23:51:14 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ void ft_fill_stack(t_list **stack,char *argv[])
         ft_add_back(stack,node);
         i++;
     }
-    ft_free2(argv);
     return;
 }
 int ft_check_duplicate(t_list *stack)
@@ -103,12 +102,14 @@ int ft_check_args(t_list **stack,char *argv[])
     int i ;
     char **str;
     int j;
-
-    i = 1;
-    while(argv[i])
+    int count;
+    
+    i = 0;
+    while(argv[++i])
     {
         j = 0;
        str = ft_split(argv[i],' ');
+       count = ft_count_word(argv[i],' ');
      if (str[j] == NULL)
     {
         free(str);
@@ -117,28 +118,17 @@ int ft_check_args(t_list **stack,char *argv[])
        while(str[j])
        {
             if(ft_valide_number(str[j]) == 0 || ft_atoi(str[j]) < INT_MIN || ft_atoi(str[j]) > INT_MAX )
-               return (ft_free2(str));
+               return (ft_freee(str,count));
             j++;
        }
             ft_fill_stack(stack,str);
+            ft_freee(str,count);
        i++;
     }
     return 1;
 }
 
-int	ft_free2(char **str)
-{
-	int	i;
 
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-	return (0);
-}
 
 
 long double  ft_atoi(const char *str)
@@ -165,4 +155,29 @@ long double  ft_atoi(const char *str)
 		i++;
 	}
 	return (n * s);
+}
+
+int	ft_free2(char **str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		free(str[i]);
+		i++;
+	}
+	free(str);
+	return (0);
+}
+
+int ft_freee(char **str,int count)
+{
+	while (count > 0)
+	{
+		count--;
+		free(str[count]);
+	}
+	free(str);
+	return (0);
 }
