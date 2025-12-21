@@ -6,11 +6,11 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 19:42:11 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/20 21:52:13 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/21 15:12:57 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 int ft_check_sorted(t_list *stack_A)
 {
@@ -41,7 +41,7 @@ int ft_strcmp(char *str1, char *str2)
     if(str1[i] ==  '\0' && str2[i] == '\0')
         return (1);
     else
-        return(0)
+        return(0);
    
 }
 
@@ -131,79 +131,15 @@ int	ft_free2(char **str)
 	int	i;
 
 	i = 0;
-	while (s[i])
+	while (str[i])
 	{
-		free(s[i]);
+		free(str[i]);
 		i++;
 	}
-	free(s);
+	free(str);
 	return (0);
 }
 
-t_list *ft_last_lst(t_list **stack)
-{
-    if(!*stack)
-        return NULL;
-    t_list *head;
-    head = *stack;
-    while(head -> next != NULL)
-        head = head -> next;
-    return head;
-}
-
-void ft_add_back(t_list **stack,t_list *node)
-{   
-    if(!stack || !node)
-        return ;
-    t_list *head;
-    head = *stack;
-    if(*stack)
-    {
-    while(head -> next != NULL)
-        head = head -> next;
-    head -> next = node;
-    }
-    else
-        *stack = node;
-    return ;
-}
-
-t_list *ft_lst_new(int value)
-{
-    t_list *node;
-    node = malloc(sizeof(t_list));
-    if(!node)
-        return (NULL);
-    node -> value = value;
-    node -> next = NULL;
-    return (node);
-}
-void ft_free_lst(t_list *lst)
-{
-    t_list *tmp;
-   tmp = lst;
-    while(tmp)
-    {
-        tmp = lst -> next;
-        free(lst);
-        lst = tmp;
-    }
-}
-
-int ft_size_lst(t_list *str)
-{
-    t_list *tmp;
-    tmp = str;
-    int size;
-    
-    size = 0;
-    while(tmp)
-    {
-       size++;
-       tmp = tmp -> next;  
-    }
-    return (size);
-}
 
 long double  ft_atoi(const char *str)
 {

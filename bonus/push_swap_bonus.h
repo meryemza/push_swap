@@ -1,17 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/20 18:46:57 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 13:14:25 by mezahir          ###   ########.fr       */
+/*   Created: 2025/12/21 13:30:00 by mezahir           #+#    #+#             */
+/*   Updated: 2025/12/21 15:11:54 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-#define PUSH_SWAP_H
+#ifndef PUSH_SWAP_BONUS_H
+#define PUSH_SWAP_BONUS_H
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10
+#endif
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -29,20 +33,13 @@ long double  ft_atoi(const char *str);
 int ft_check_duplicate(t_list *stack);
 int ft_valide_number(char *arg);
 void ft_fill_stack(t_list **stack,char *argv[]);
-int	ft_free2(char **str);
 char	**ft_split(char const *s, char c);
 int ft_check_args(t_list **stack,char *argv[]);
 int ft_check_sorted(t_list *stack_A);
-void ft_sort(t_list **stack_A,t_list **stack_B,int size);
-void sort_4(t_list **stack_A,t_list **stack_B);
-void sort_5(t_list **stack_A,t_list **stack_B);
-void sort_3(t_list **stack_A);
-void push_to_B(t_list **stack_A,t_list **stack_B,int *array,int size);
-void push_to_A(t_list **stack_A,t_list **stack_B,int *array,int size);
-void ft_add_index(t_list **stack_B);
-
-void big_sort(t_list **stack_A, t_list **stack_B);
-void push_B_TO_A(t_list **A,t_list **B);
+int	ft_free2(char **str);
+int ft_strcmp(char *str1, char *str2);
+void ft_cheker(t_list **A,t_list **B);
+int instruction(t_list **A,t_list **B,char *line);
 
 int ft_size_lst(t_list *str);
 void ft_free_lst(t_list **lst);
@@ -50,13 +47,15 @@ t_list *ft_last_lst(t_list **stack);
 void ft_add_back(t_list **stack,t_list *node);
 t_list *ft_lst_new(int value);
 
-void sort_A(t_list **stack_A,t_list **stack_B,int p);
-int pos_first_min_index(t_list *stack,int n);
-int    ft_search_max_pos(t_list *b, t_list **max_node);
-
-void push_B_TO_A(t_list **A,t_list **B);
-int get_pos_max(t_list *B, int max);
-int ft_search_max(t_list *stack_B);
+char	*ft_search(char *str, int c);
+size_t	ft_strlen(char *str);
+char	*ft_strcpy(char *dest, char *src);
+char	*ft_strdup(char *str);
+char	*ft_concat_str(char *str, char *buffer);
+char	*get_next_line(int fd);
+char	*ft_rest(char *str);
+char	*ft_line(char *str);
+char	*read_until_newline(int fd, char *str);
 
 void ra(t_list **stack_A);
 void rb(t_list **stack_B);

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helper.c                                           :+:      :+:    :+:   */
+/*   lst_helper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 11:07:25 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 12:40:27 by mezahir          ###   ########.fr       */
+/*   Created: 2025/12/21 11:58:05 by mezahir           #+#    #+#             */
+/*   Updated: 2025/12/21 13:37:56 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 t_list *ft_last_lst(t_list **stack)
 {
@@ -56,9 +56,9 @@ void ft_free_lst(t_list **lst)
     
     while(*lst)
     {
-        tmp = (*lst) -> next;
+        (tmp) = (*lst) -> next;
         free(*lst);
-        *lst = tmp;
+        (*lst) = tmp;
     }
 }
 
@@ -75,44 +75,4 @@ int ft_size_lst(t_list *str)
        tmp = tmp -> next;  
     }
     return (size);
-}
-
-long double  ft_atoi(const char *str)
-{
-	int				i;
-	int				s;
-	long double n;
-
-	i = 0;
-	s = 1;
-	n = 0;
-	while ((str[i] >= 9 && str[i] <= 13) || str[i] == ' ')
-		i++;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
-	{
-		s = -1;
-		i++;
-	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		n = n * 10 + (str[i] - '0');
-		i++;
-	}
-	return (n * s);
-}
-
-int	ft_free2(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-	return (0);
 }
