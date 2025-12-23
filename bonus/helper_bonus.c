@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 19:42:11 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 23:51:14 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/22 21:27:17 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,12 @@ int ft_check_sorted(t_list *stack_A)
    t_list *node;
    node = stack_A;
    
-   while(node != NULL && node -> next != NULL)
+   while(node != NULL && node -> next != NULL )
    {
     if((node -> value) > ((node -> next )-> value))
         return (0);
     node = node -> next;
+    
    }
    return (1);
 }
@@ -96,7 +97,11 @@ int ft_valide_number(char *arg)
     }
     return 1;
 }
-
+int helper(char **str)
+{
+    free(str);
+    return (0);
+}
 int ft_check_args(t_list **stack,char *argv[])
 {   
     int i ;
@@ -111,10 +116,7 @@ int ft_check_args(t_list **stack,char *argv[])
        str = ft_split(argv[i],' ');
        count = ft_count_word(argv[i],' ');
      if (str[j] == NULL)
-    {
-        free(str);
-        return 0;
-    }
+        return (helper(str));
        while(str[j])
        {
             if(ft_valide_number(str[j]) == 0 || ft_atoi(str[j]) < INT_MIN || ft_atoi(str[j]) > INT_MAX )
@@ -123,13 +125,9 @@ int ft_check_args(t_list **stack,char *argv[])
        }
             ft_fill_stack(stack,str);
             ft_freee(str,count);
-       i++;
     }
     return 1;
 }
-
-
-
 
 long double  ft_atoi(const char *str)
 {
@@ -155,20 +153,6 @@ long double  ft_atoi(const char *str)
 		i++;
 	}
 	return (n * s);
-}
-
-int	ft_free2(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-	return (0);
 }
 
 int ft_freee(char **str,int count)

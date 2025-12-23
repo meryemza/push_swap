@@ -6,12 +6,28 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 11:28:21 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/22 00:10:34 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/22 20:26:28 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+int ft_max(t_list *stack_A)
+{
+    int max;
+    t_list *node;
 
+    node = stack_A;
+    if(!stack_A)
+        return(0);
+    max = node -> value;
+    while(node)
+    {
+        if(node -> next != NULL && max < node -> next -> value)
+            max = node-> next -> value;
+        node = node -> next;
+    }
+    return (max);
+}
 int ft_min(t_list *stack_A)
 {
    int min;
@@ -52,19 +68,14 @@ void pos3(t_list **stack_A,t_list **stack_B)
 }
 void sort_3(t_list **stack_A)
 {
-    int x;
-    int y;
-    int z;
-    
-    x = (*stack_A) -> value;
-    y = (*stack_A) -> next -> value ;
-    z = (*stack_A) -> next-> next -> value;
-    if(x > y && x > z)
+    if((*stack_A) -> value == ft_max(*stack_A))
         ra(stack_A);
-    else if(y > x && y > z)
+    else if((*stack_A)-> next -> value == ft_max(*stack_A))
         rra(stack_A);
-    if(x > y)
+    if((*stack_A) -> value > (*stack_A) -> next -> value)
         sa(stack_A);
+    else
+        return;
 }
 void sort_4(t_list **stack_A,t_list **stack_B)
 {
@@ -82,9 +93,11 @@ void sort_4(t_list **stack_A,t_list **stack_B)
    }
    else if(pos == 2)
         pos2(stack_A,stack_B);
-   else
+   else if (pos == 3)
     {
         rra(stack_A);
+        if(ft_check_sorted(*stack_A))
+            return;
         push_B(stack_A,stack_B);
     }
     sort_3(stack_A);
@@ -108,9 +121,11 @@ int pos;
         pos2(stack_A,stack_B);
     else if(pos == 3)
        pos3(stack_A,stack_B);
-    else  
+    else if (pos == 4)
     {
         rra(stack_A);
+        if(ft_check_sorted(*stack_A))
+            return;
         push_B(stack_A,stack_B);
     } 
     sort_4(stack_A,stack_B);

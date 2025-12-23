@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 20:36:34 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/22 00:03:43 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/22 21:52:57 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,18 +46,17 @@ void ft_cheker(t_list **A,t_list **B)
     char *line ;
     while((line = get_next_line(0)) != NULL)
     {
-     line[ft_strlen(line) - 1] = '\0';
+        if(line[ft_strlen(line) - 1] == '\n')
+                line[ft_strlen(line) - 1] = '\0';
     if(!instruction(A,B,line))
-    {
-            write(1,"ERROR\n",6);
-            return ;
+        {
+            write(2,"ERROR\n",6);
+            free(line);
+            ft_free_lst(A);
+            exit(1) ;
         }
-    free(line);
+        free(line);
     }
-    if(ft_check_sorted(*A) == 1)
-        write(1,"OK\n",3);
-    else
-         write(1,"KO\n",3);
 }
 
 int main(int argc,char **argv)
@@ -75,16 +74,15 @@ int main(int argc,char **argv)
         ft_free_lst(&stack_A);
         return (0);
     }
-    ft_fill_stack(&stack_A , argv);
-    if(ft_check_sorted(stack_A) == 1)
-        {
-            ft_free_lst(&stack_A);
-            return (0);
-        }
     ft_cheker(&stack_A,&stack_B);
+    if(ft_check_sorted(stack_A) == 1 && !stack_B)
+        write(1,"OK\n",3);
+    else
+         write(1,"KO\n",3);
     ft_free_lst(&stack_A);
     if(ft_size_lst(stack_B))
         ft_free_lst(&stack_B);
     return(0);
 }
+
 
