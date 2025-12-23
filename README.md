@@ -32,6 +32,7 @@
     If an error occurs (invalid arguments, duplicates, or unknown instructions), the program prints Error.
     
 3 - Resources :
+    - https://www.scribd.com/document/636999723/Untitled
     - https://en.wikipedia.org/wiki/Sorting_algorithm
     - https://www.geeksforgeeks.org/dsa/lifo-principle-in-stack/
     - https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a

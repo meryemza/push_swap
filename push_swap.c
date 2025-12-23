@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 11:07:35 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 13:15:19 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/23 23:24:17 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ int main(int argc, char *argv[])
     stack_B = NULL;
     if(ft_check_args(&stack_A,argv) == 0 || ft_check_duplicate(stack_A) == 0)
     {
-        write(2,"ERROR\n",6);
+        write(2,"Error\n",6);
         ft_free_lst(&stack_A);
-        return (0);
+        exit(1);
     }
     size = ft_size_lst(stack_A);
    

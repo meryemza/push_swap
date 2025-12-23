@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 19:26:50 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 13:38:30 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/23 23:19:26 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,13 @@ void rotate(t_list **stack)
 void ra(t_list **stack_A)
 {
     rotate(stack_A);
-    write(1,"ra\n",3);
 }
 void rb(t_list **stack_B)
 {
     rotate(stack_B);
-    write(1,"rb\n",3);
 }
 void rr(t_list **stack_A,t_list **stack_B)
 {
     rotate(stack_A);
     rotate(stack_B);
-    write(1,"rr\n",3);
 }

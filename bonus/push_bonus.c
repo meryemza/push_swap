@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 19:38:09 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 13:38:04 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/23 23:20:09 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ void push_A(t_list **stack_A,t_list **stack_B)
     *stack_B = head_B -> next;
     *stack_A = head_B;
     head_B -> next = head_A;
-    write(1,"pa\n",3);
 }
 void push_B(t_list **stack_A,t_list **stack_B)
 {
@@ -38,5 +37,4 @@ void push_B(t_list **stack_A,t_list **stack_B)
     *stack_A = head_A -> next;
     *stack_B = head_A;
     head_A -> next = head_B;
-    write(1,"pb\n",3);
 }

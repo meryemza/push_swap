@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 19:26:06 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/21 13:38:44 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/23 23:19:02 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,13 @@ void swap(t_list **stack)
 void sa(t_list **stack_A)
 {
     swap(stack_A);
-    write(1,"sa\n",3);
 }
 void sb(t_list **stack_B)
 {
     swap(stack_B);
-    write(1,"sb\n",3);
 }
 void ss(t_list **stack_B,t_list **stack_A)
 {
     swap(stack_B);
     swap(stack_A);
-    write(1,"ss\n",3);
 }

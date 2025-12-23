@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 20:01:44 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/20 18:52:30 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/23 21:11:41 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void push_B_TO_A(t_list **A,t_list **B)
     int max;
     int pos_max;
   
-    if(!*B)
+    if(!(*B))
         return;
     max = ft_search_max(*B);
     pos_max = get_pos_max(*B,max);

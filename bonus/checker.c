@@ -6,7 +6,7 @@
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/20 20:36:34 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/22 21:52:57 by mezahir          ###   ########.fr       */
+/*   Updated: 2025/12/23 23:22:58 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void ft_cheker(t_list **A,t_list **B)
                 line[ft_strlen(line) - 1] = '\0';
     if(!instruction(A,B,line))
         {
-            write(2,"ERROR\n",6);
+            write(2,"Error\n",6);
             free(line);
             ft_free_lst(A);
             exit(1) ;
@@ -70,7 +70,7 @@ int main(int argc,char **argv)
     stack_B = NULL;
     if(ft_check_args(&stack_A,argv) == 0 || ft_check_duplicate(stack_A) == 0)
     {
-        write(2,"ERROR\n",6);
+        write(2,"Error\n",6);
         ft_free_lst(&stack_A);
         return (0);
     }
