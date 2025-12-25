@@ -10,10 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "push_swap_bonus.h"
 
- unsigned int	ft_count_word(char const *s, char c)
+unsigned int	ft_count_word(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	count;

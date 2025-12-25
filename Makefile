@@ -17,7 +17,8 @@ SRC = helper.c \
       swap.c \
       valide_args.c \
       sort.c\
-      big_sort.c
+      big_sort.c\
+      lst_func.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -32,7 +33,8 @@ BONUS_SRC = bonus/checker.c\
             bonus/reverse_rotate_bonus.c \
             bonus/rotate_bonus.c \
             bonus/split_bonus.c \
-            bonus/swap_bonus.c
+            bonus/swap_bonus.c \
+            bonus/helper2_bonus.c
 
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
 

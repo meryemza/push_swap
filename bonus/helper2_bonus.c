@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   helper.c                                           :+:      :+:    :+:   */
+/*   helper2_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/16 11:07:25 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/25 10:51:46 by mezahir          ###   ########.fr       */
+/*   Created: 2025/12/24 23:52:47 by mezahir           #+#    #+#             */
+/*   Updated: 2025/12/25 00:03:08 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "push_swap_bonus.h"
 
 long double	ft_atoi(const char *str)
 {
@@ -49,46 +49,40 @@ int	ft_freee(char **str, int count)
 	return (0);
 }
 
-int	ft_max(t_list *stack_A)
+int	ft_strcmp(char *str1, char *str2)
 {
-	int		max;
-	t_list	*node;
+	int	i;
 
-	node = stack_A;
-	if (!stack_A)
-		return (0);
-	max = node->value;
-	while (node)
+	i = 0;
+	while (str1[i] && str2[i])
 	{
-		if (node->next != NULL && max < node->next->value)
-			max = node->next->value;
-		node = node->next;
+		if (str1[i] != str2[i])
+			return (0);
+		else
+			i++;
 	}
-	return (max);
+	if (str1[i] == '\0' && str2[i] == '\0')
+		return (1);
+	else
+		return (0);
 }
 
-int	ft_min(t_list *stack_A)
+int	ft_check_duplicate(t_list *stack)
 {
-	int		min;
-	int		i;
-	int		pos;
-	t_list	*node;
+	t_list	*head;
+	t_list	*tmp;
 
-	node = stack_A;
-	if (!node)
-		return (-1);
-	i = 0;
-	pos = 0;
-	min = node->value;
-	while (node)
+	head = stack;
+	while (head)
 	{
-		if (min > (node->value))
+		tmp = head;
+		while (tmp->next != NULL)
 		{
-			min = node->value;
-			pos = i;
+			if (head->value == tmp->next->value)
+				return (0);
+			tmp = tmp->next;
 		}
-		node = node->next;
-		i++;
+		head = head->next;
 	}
-	return (pos);
+	return (1);
 }

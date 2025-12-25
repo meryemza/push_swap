@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lst_helper.c                                       :+:      :+:    :+:   */
+/*   lst_func.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mezahir <mezahir@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/21 11:58:05 by mezahir           #+#    #+#             */
-/*   Updated: 2025/12/25 00:06:20 by mezahir          ###   ########.fr       */
+/*   Created: 2025/12/25 00:18:18 by mezahir           #+#    #+#             */
+/*   Updated: 2025/12/25 00:19:22 by mezahir          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap_bonus.h"
+#include "push_swap.h"
 
 t_list	*ft_last_lst(t_list **stack)
 {
@@ -60,9 +60,9 @@ void	ft_free_lst(t_list **lst)
 
 	while (*lst)
 	{
-		(tmp) = (*lst)->next;
+		tmp = (*lst)->next;
 		free(*lst);
-		(*lst) = tmp;
+		*lst = tmp;
 	}
 }
 
