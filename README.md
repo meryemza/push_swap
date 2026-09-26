@@ -1,6 +1,6 @@
                                             Push_swap
 
-*This project has been created as part of the 42 curriculum by <mezahir>*
+*This project has been created as part of the 42 curriculum*
 
 1 - Description Section :
 
